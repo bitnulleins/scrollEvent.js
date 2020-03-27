@@ -10,9 +10,9 @@
 > Simple and fast event listener for enter viewport in pure Java-Script.
 
 Key-features are:
-* Event focused from viewport
+* Event actions for visible viewport
 * Works *without any* dependencies
-* Fast und small size
+* Fast und small size in pure javascript
 * Multiple instances (and events) possible
 
 # General use
@@ -20,7 +20,7 @@ Key-features are:
 ```html
 <script type="text/javascript" src="scrollView.js"></script>
 ```
-2. Now add an ScrollEvent listener for an element:
+2. Now add ScrollEvent listener to an element:
 
 ```html
 <script type="text/javascript">
@@ -30,7 +30,7 @@ Key-features are:
 </script>
 ```
 
-# Example
+# Example and demo
 
 **Pure Java Script (Vanilla JS)**
 ```html
@@ -41,12 +41,14 @@ Key-features are:
 </script>
 ```
 
+***See the javascript library live in action:*** [Open Example](https://www.bit01.de)
+
 It is also possible with javascript libraries like jQuery, React.js, AngularJS or vue.JS. Only have to switch element selector.
 
 ## Functions
 
 ```javascript
-.visible(DOMElement, Callback)
+ScrollEvent().visible(DOMElement, Callback)
 ```
 
 Parameter | Description
@@ -55,11 +57,20 @@ Parameter | Description
 **Callback** | A function (Event), called when element is visible
 
 ## Options
+
+The options are optional and can be added as an **object** to the main ScrollEvent function:
+
 Option | Description | Datatype | Default Value
 --- | --- | --- | ---
 **delay** | Delay time in ms, after event should fire | Number | 0
 **repetition** | Amount of repetition of the event | Number |  1
 **fullyInView** | Have the elemnt to be fully in view? | Boolean | false
+
+**Example**
+
+```javascript
+ScrollEvent({delay:2000,fullyInView:true}, () => { // action .... });
+```
 
 ## Install via npm
 
