@@ -7,7 +7,9 @@
 </p>
 
 # What is scrollEvent.js?
-Simple and fast event listener for enter viewport in pure Java-Script. The features are:
+> Simple and fast event listener for enter viewport in pure Java-Script.
+
+Key-features are:
 * Event focused from viewport
 * Works *without any* dependencies
 * Fast und small size
