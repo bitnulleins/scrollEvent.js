@@ -1,10 +1,10 @@
 {
-  "name": "scrollevent",
+  "name": "scrolleventjs",
   "version": "1.0.0",
   "description": "Simple and fast event listener for enter viewport in pure Java-Script",
-  "main": "scrollEvent.min.js",
+  "main": "./src/scrollEvent.min.js",
   "directories": {
-    "example": "example"
+    "example": "src"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/bitnulleins/scrollEvent.js/issues"
   },
+  "keywords": ["scroll","event","viewport","javascript"],
   "homepage": "https://github.com/bitnulleins/scrollEvent.js#readme"
 }

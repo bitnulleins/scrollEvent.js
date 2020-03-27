@@ -1,4 +1,4 @@
-/*! @licence ScrollView v.1.0.0
+/*! @licence ScrollEvent v.1.0.0
 
     Copyright 2020 bitnulleins
 
@@ -13,7 +13,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 	typeof define === 'function' && define.amd ? define(factory) :
-	(global = global || self, global.ScrollView = factory());
+	(global = global || self, global.ScrollEvent = factory());
 }(this, function () { 'use strict';
 
     let defaults = {
@@ -52,7 +52,7 @@
 		while ( len-- > 0 ) details[ len ] = arguments[ len + 1 ];
 
 		if (this.constructor.debug && console) {
-			var report = "%cScrollView: " + message;
+			var report = "%cScrollEvent: " + message;
 			details.forEach(function (detail) { return (report += "\n — " + detail); });
 			console.log(report, 'color: #ea654b;'); // eslint-disable-line no-console
 		}
@@ -120,15 +120,15 @@
     
     let instance, config;
 
-    function ScrollView(options) {
+    function ScrollEvent(options) {
         if ( options === void 0 ) options = {};
 
         let invokedWithoutNew =
 			typeof this === 'undefined' ||
-			Object.getPrototypeOf(this) !== ScrollView.prototype;
+			Object.getPrototypeOf(this) !== ScrollEvent.prototype;
 
 		if (invokedWithoutNew) {
-			return new ScrollView(options)
+			return new ScrollEvent(options)
         }
 
         let buffer;
@@ -155,6 +155,6 @@
         return instance ? instance : (instance = this)
     }
 
-	return ScrollView;
+	return ScrollEvent;
 
 }));
