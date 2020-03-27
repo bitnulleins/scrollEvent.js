@@ -18,7 +18,7 @@ Key-features are:
 # General use
 1. First add the library to the header:
 ```html
-<script type="text/javascript" src="scrollView.js"></script>
+<script type="text/javascript" src="scrollEvent.js"></script>
 ```
 2. Now add ScrollEvent listener to an element:
 
