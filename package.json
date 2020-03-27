@@ -1,0 +1,29 @@
+{
+  "name": "scrollview",
+  "version": "1.0.1",
+  "description": "Simple and fast event listener for enter viewport in pure Java-Script",
+  "main": "scrollView.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitnulleins/scrollView.js.git"
+  },
+  "keywords": [
+    "JS",
+    "Scroll",
+    "DOM",
+    "Events",
+    "Viewport"
+  ],
+  "author": "bitnulleins <hellp@bit01.de> (https://www.bit01.de)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bitnulleins/scrollView.js/issues"
+  },
+  "homepage": "https://github.com/bitnulleins/scrollView.js#readme",
+  "dependencies": {
+    "loadsh": "0.0.4"
+  }
+}
