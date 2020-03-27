@@ -23,7 +23,7 @@ Simple and fast event listener for enter viewport in pure Java-Script. The featu
 ```html
 <script type="text/javascript">
   ScrollEvent().visible(DOMElement, () => {
-   // what should happen when DOMElement is visible?
+   // Event that should happen when DOMElement is visible
   });
 </script>
 ```
@@ -49,15 +49,15 @@ It is also possible with javascript libraries like jQuery, React.js, AngularJS o
 
 Parameter | Description
 --- | ---
-**DOMElement** | An DOM element (HTML element), which is selected by a selector
-**Callback** | Action which should fire, when the viewport is reached by scrolling
+**DOMElement** | An HTML DOM element (as selector)
+**Callback** | A function (Event), called when element is visible
 
 ## Options
 Option | Description | Datatype | Default Value
 --- | --- | --- | ---
-**delay** | ... | Number | 0
-**repetition** | ... | Number |  1
-**fullyInView** | ... | Boolean | false
+**delay** | Delay time in ms, after event should fire | Number | 0
+**repetition** | Amount of repetition of the event | Number |  1
+**fullyInView** | Have the elemnt to be fully in view? | Boolean | false
 
 ## Install via npm
 
