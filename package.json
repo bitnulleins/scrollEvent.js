@@ -1,6 +1,6 @@
 {
-  "name": "scrollview",
-  "version": "1.0.1",
+  "name": "scrollviewjs",
+  "version": "1.0.0",
   "description": "Simple and fast event listener for enter viewport in pure Java-Script",
   "main": "scrollView.min.js",
   "scripts": {
