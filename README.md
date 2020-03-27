@@ -3,7 +3,7 @@
 </p>
   
 <p align="center">
-<img src="https://img.shields.io/github/size/bitnulleins/scrollEvent.js/src/scrollEvent.min.js?label=size%20%28minimize%29" /> <img src="https://img.shields.io/npm/v/scrollevent" /> <img src="https://img.shields.io/npm/dm/scrollevent" />  <img src="https://img.shields.io/github/issues/bitnulleins/scrollEvent.js" /> 
+<img src="https://img.shields.io/github/size/bitnulleins/scrollEvent.js/src/scrollEvent.min.js?label=size%20%28minimize%29" /> <img src="https://img.shields.io/npm/v/scrolleventjs" /> <img src="https://img.shields.io/npm/dm/scrolleventjs" />  <img src="https://img.shields.io/github/issues/bitnulleins/scrollEvent.js" /> 
 </p>
 
 # What is scrollEvent.js?
