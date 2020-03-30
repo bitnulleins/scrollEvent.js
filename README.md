@@ -69,7 +69,7 @@ Option | Description | Datatype | Default Value
 **Example**
 
 ```javascript
-ScrollEvent({delay:2000,fullyInView:true}, () => { // action .... });
+ScrollEvent({delay:2000,fullyInView:true}, () => { /* action .... */ });
 ```
 
 ## Install via npm
