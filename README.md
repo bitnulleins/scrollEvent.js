@@ -41,7 +41,7 @@ Key-features are:
 </script>
 ```
 
-***See the javascript library live in action:*** [Open Example](https://www.bit01.de)
+***See the javascript library live in action:*** [Open Example](https://bitnulleins.github.io/scrollEvent.js/)
 
 It is also possible with javascript libraries like jQuery, React.js, AngularJS or vue.JS. Only have to switch element selector.
 
