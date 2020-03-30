@@ -1,4 +1,4 @@
-/*! @licence ScrollEvent v.1.0.0
+/*! @licence ScrollEvent v.1.0.1
 
     Copyright 2020 bitnulleins
 
@@ -23,28 +23,37 @@
     };
 
     function visible(target, callback) {
-        if (!callback || typeof callback !== 'function') return;
+        tealight(target).forEach(element => {
+            if (!callback || typeof callback !== 'function') return;
+            if (!element || typeof element !== 'object') return;
 
-        let visibleCounter = 0;
-        let fullyInView = this.defaults.fullyInView || defaults.fullyInView;
-        let delay = this.defaults.delay || defaults.delay;
-        let repetition = this.defaults.repetition || defaults.repetition;
+            let visibleCounter = 0;
+            let fullyInView = this.defaults.fullyInView || defaults.fullyInView;
+            let delay = this.defaults.delay || defaults.delay;
+            let repetition = this.defaults.repetition || defaults.repetition;
 
-        window.addEventListener('scroll', function (event) {
-            let rect = target.getBoundingClientRect();
-            let elemTop = rect.top;
-            let elemBottom = rect.bottom;
+            console.log(element.getBoundingClientRect().top +"<="+ window.innerHeight)
 
-            let isVisible =
-                    (fullyInView)
-                    ? (elemTop >= 0) && (elemBottom <= window.innerHeight)
-                    : elemTop < window.innerHeight && elemBottom >= 0;
-            
-            if (isVisible && visibleCounter < repetition) {
-                visibleCounter++;
-                setTimeout(callback, delay);
+            if (element.getBoundingClientRect().top <= window.innerHeight) {
+                setTimeout(callback, delay, element);
             }
-        }, false);
+
+            window.addEventListener('scroll', () => {
+                let rect = element.getBoundingClientRect();
+                let elemTop = rect.top;
+                let elemBottom = rect.bottom;
+
+                let isVisible =
+                        (fullyInView)
+                        ? (elemTop >= 0) && (elemBottom <= window.innerHeight)
+                        : elemTop < window.innerHeight && elemBottom >= 0;
+                
+                if (isVisible && visibleCounter < repetition) {
+                    visibleCounter++;
+                    setTimeout(callback, delay, element);
+                }
+            }, false);
+        });
     }
 
     function logger(message) {
@@ -57,6 +66,99 @@
 			console.log(report, 'color: #ea654b;'); // eslint-disable-line no-console
 		}
     }
+
+    /*! @license is-dom-node v1.0.4
+
+            Copyright 2018 Fisssion LLC.
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+
+            The above copyright notice and this permission notice shall be included in all
+            copies or substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+
+    */
+    function isDomNode(x) {
+		return typeof window.Node === 'object'
+			? x instanceof window.Node
+			: x !== null &&
+					typeof x === 'object' &&
+					typeof x.nodeType === 'number' &&
+					typeof x.nodeName === 'string'
+    }
+    
+    /*! @license is-dom-node-list v1.2.1
+
+		Copyright 2018 Fisssion LLC.
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all
+		copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+		SOFTWARE.
+
+    */
+    
+	function isDomNodeList(x) {
+		var prototypeToString = Object.prototype.toString.call(x);
+		var regex = /^\[object (HTMLCollection|NodeList|Object)\]$/;
+
+		return typeof window.NodeList === 'object'
+			? x instanceof window.NodeList
+			: x !== null &&
+					typeof x === 'object' &&
+					typeof x.length === 'number' &&
+					regex.test(prototypeToString) &&
+					(x.length === 0 || isDomNode(x[0]))
+    }
+    
+    /*! @license Tealight v0.3.6
+
+		Copyright 2018 Fisssion LLC.
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy
+		of this software and associated documentation files (the "Software"), to deal
+		in the Software without restriction, including without limitation the rights
+		to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+		copies of the Software, and to permit persons to whom the Software is
+		furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all
+		copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+		IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+		FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+		AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+		SOFTWARE.
+
+	*/
 
     function tealight(target, context) {
         if ( context === void 0 ) { context = document; }

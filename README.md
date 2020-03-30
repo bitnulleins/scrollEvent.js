@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://www.bit01.de/wp-content/uploads/2020/03/scrollEvent-logo.png" height="200" />
+<img src="https://www.bit01.de/wp-content/uploads/2020/03/scrollEvent.png" height="200" />
 </p>
   
 <p align="center">

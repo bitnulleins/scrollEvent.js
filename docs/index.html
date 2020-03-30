@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demonstration | scrollEvent.js</title>
+    <script src="../src/scrollEvent.js"></script>
+    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+        body {
+            background:#f0f0f0;
+            margin:10px;
+            font-family:'Open Sans';
+        }
+
+        #main {
+            max-width:800px;
+            margin: 0 auto;
+            padding:20px 10px;
+        }
+
+        .description {
+            font-size:150%;
+            color:#AAA;
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .logo {
+            background-image:url(https://www.bit01.de/wp-content/uploads/2020/03/scrollEvent.png);
+            width:250px;
+            height:200px;
+            background-size:100% 100%;
+            margin:0 auto;
+        }
+
+        main {
+            margin-top:30px;
+            column-count: 2;
+            column-gap: 1em;
+        }
+
+        .container {
+            background-color: #b8b8b8;
+            display: inline-block;
+            margin: 0 0 1em;
+            border-radius:10px;
+            border:2px solid #fff;
+            font-size:150%;
+            width: 100%;
+            padding:20px;
+            box-sizing: border-box;
+            transition: all 1s;
+        }
+
+        .container:nth-child(1) { height:800px; }
+        .container:nth-child(2) { height:500px; }
+        .container:nth-child(3) { height:600px; }
+        .container:nth-child(4) { height:600px; }
+        .container:nth-child(5) { height:200px; }
+        .container:nth-child(6) { height:300px; }
+        .container:nth-child(7) { height:500px; }
+        .container:nth-child(8) { height:500px; }
+        .container:nth-child(9) { height:700px; }
+        .container:nth-child(10) { height:200px; }
+
+        #scroll {
+            position:fixed;
+            bottom:0;
+            text-align:center;
+            width:100%;
+            color:#555;
+            text-transform:uppercase;
+            font-size:150%;
+            font-weight:800;
+            box-sizing: border-box;
+            padding:25px 20px 5px 20px;
+            background: rgb(240,240,240);
+background: linear-gradient(0deg, rgba(240,240,240,1) 65%, rgba(240,240,240,0) 100%);
+        }
+    </style>
+  </head>
+  <body>
+    <div id="scroll">
+        Scroll down
+    </div>
+    <div id="main">
+        <header>
+            <div class="logo"></div>
+        </header>
+        <div class="description">
+            Simple and fast event listener for enter viewport in pure Java-Script.
+        </div>
+        <main>
+            <div class="container" id="event-always-visible">It also works for items that are always visible...<br /><br /><code>ScrollEvent()<br/>.visible(...)</code><br /><br />Default options:<ul><li>fullyInView: false</li><li>delay: 0</li><li>repetition: 1</li></ul></div>
+            <div class="container"></div>
+            <div class="container"></div>
+            <div class="container" id="event-fullyinview">This box have to be fully in view.<br /><br /><code>ScrollEvent({fullyInView: true})<br/>.visible(...)</code></div>
+            <div class="container"></div>
+            <div class="container"></div>
+            <div class="container event-class-item">You can select multiple item simultaneously!</code></div>
+            <div class="container event-class-item">It is also possible to use JS libraries like jQuery, vue.JS, AngularJS or React.js<br /><br /><code>ScrollEvent()<br/>.visible($('.className'), ...)</code></div>
+            <div class="container"></div>
+            <div class="container" id="event-after-3-seconds">My event fired after 3000ms after get visible... <code></code><br />1...<br/>2..</div>
+        </main>
+    </div>
+    <script>
+        
+        /**
+         * Event fires when item is always visible...
+        */
+        ScrollEvent().visible(document.getElementById('event-always-visible'), changeColor);
+
+        /**
+         * Event fires when item is fully in view
+        */
+        ScrollEvent({fullyInView:true}).visible(document.getElementById('event-fullyinview'), changeColor);
+
+        /**
+         * Event fires for more items as the same time with class selector
+        */
+        ScrollEvent().visible(document.getElementsByClassName('event-class-item'), changeColor);
+
+        /**
+         * Event fires after 2 seconds...
+         */
+        ScrollEvent({delay:3000}).visible(document.getElementById('event-after-3-seconds'), (element) => {
+            changeColor(element);
+            element.innerHTML = 'Finished!' + '<br/><br/>' + '<code>ScrollEvent({delay:3000})<br/>.visible(...)</code>';
+        });
+        
+        /**
+         * Change color and background for an element...
+         */
+        function changeColor(element) {
+            element.style.background = '#8b21ee';
+            element.style.color = '#fff';
+        }
+    </script>
+  </body>
+</html>
