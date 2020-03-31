@@ -2,10 +2,18 @@
   "name": "scrolleventjs",
   "version": "1.0.0",
   "description": "Simple and fast event listener for enter viewport in pure Java-Script",
-  "main": "./src/scrollEvent.min.js",
   "directories": {
     "example": "src"
   },
+  "npmFileMap": [
+    {
+      "basePath": "src",
+      "files": [
+        "**/*.@(js)"
+      ]
+    }
+  ],
+  "filename": "scrollEvent.min.js",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
