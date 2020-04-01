@@ -35,8 +35,8 @@ Key-features are:
 **Pure Java Script (Vanilla JS)**
 ```html
 <script type="text/javascript">
-  ScrollEvent().visible(document.getElementById('myElement'), () => {
-   this.innerHTML = 'I changed my text right now!'
+  ScrollEvent().visible(document.getElementById('myElement'), (element) => {
+   elment.innerHTML = 'I changed my text right now!'
   });
 </script>
 ```
@@ -54,7 +54,7 @@ ScrollEvent().visible(DOMElement, Callback)
 Parameter | Description
 --- | ---
 **DOMElement** | An HTML DOM element (as selector)
-**Callback** | A function (Event), called when element is visible
+**Callback(element)** | A function (Event), called when element is visible. Object in method: *element*
 
 ## Options
 
