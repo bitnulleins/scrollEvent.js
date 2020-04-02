@@ -78,7 +78,7 @@ ScrollEvent({delay:2000,fullyInView:true}, () => { /* action .... */ });
 
 ## Install via npm
 
-You can simple install the javascript library locally via ![npm](https://www.npmjs.com/package/scrolleventjs):
+You can simple install the javascript library locally via [npm](https://www.npmjs.com/package/scrolleventjs):
 
 ```shell
 npm install scrolleventjs
