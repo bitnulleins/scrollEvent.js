@@ -22,7 +22,7 @@ Key-features are:
 ```
 With external hosted file:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/scrolleventjs@1.0.3/src/scrollEvent.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/scrolleventjs"></script>
 ```
 2. Now add ScrollEvent listener to an element:
 
