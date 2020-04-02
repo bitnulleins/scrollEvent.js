@@ -31,7 +31,8 @@
     "scroll",
     "event",
     "viewport",
-    "javascript"
+    "javascript",
+    "trigger"
   ],
   "homepage": "https://github.com/bitnulleins/scrollEvent.js#readme"
 }
