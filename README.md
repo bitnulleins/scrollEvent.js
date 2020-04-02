@@ -16,13 +16,13 @@ Key-features are:
 * Multiple instances (and events) possible
 
 # General use
-1. First add the library to the header:
+1. First [download](https://github.com/bitnulleins/scrollEvent.js/archive/master.zip) and add the library to the header:
 ```html
 <script src="./local/path/to/scrollEvent.min.js"></script>
 ```
 With external hosted file:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/scrolleventjs@1.0.1/src/scrollEvent.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/scrolleventjs@1.0.3/src/scrollEvent.min.js"></script>
 ```
 2. Now add ScrollEvent listener to an element:
 

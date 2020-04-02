@@ -3,98 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>scrollEvent.js – Fast and lightweight scroll event listener JS library</title>
-    <script src="https://cdn.jsdelivr.net/npm/scrolleventjs@1.0.1/src/scrollEvent.min.js"></script>
+    <title>scrollEvent.js – Lightweight Scroll-trigger Javascript Library</title>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <meta name="robots" content="index,follow" >
+    <meta name="description" content="Simple and fast event listener for enter viewport in pure Java-Script. Triggers a Java-Script function if HTML DOM element is visible in viewport by scrolling. NPM ready!" />
+    <script src="https://cdn.jsdelivr.net/npm/scrolleventjs@1.0.3/src/scrollEvent.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
-        body {
-            background:#f0f0f0;
-            margin:10px;
-            font-family:'Open Sans';
-        }
-
-        #main {
-            max-width:800px;
-            margin: 0 auto;
-            padding:20px 10px;
-        }
-
-        .description {
-            font-size:150%;
-            color:#AAA;
-            text-align:center;
-            margin-top:20px;
-        }
-
-        .logo {
-            background-image:url(https://www.bit01.de/wp-content/uploads/2020/03/scrollEvent.png);
-            width:250px;
-            height:200px;
-            background-size:100% 100%;
-            margin:0 auto;
-        }
-
-        main {
-            margin-top:30px;
-            column-count: 2;
-            column-gap: 1em;
-        }
-
-        .container {
-            background-color: #b8b8b8;
-            display: inline-block;
-            margin: 0 0 1em;
-            border-radius:10px;
-            border:2px solid #fff;
-            font-size:150%;
-            width: 100%;
-            padding:20px;
-            box-sizing: border-box;
-            overflow:hidden;
-            transition: all 1s;
-        }
-
-        .container:nth-child(1) { height:800px; }
-        .container:nth-child(2) { height:500px; }
-        .container:nth-child(3) { height:600px; }
-        .container:nth-child(4) { height:600px; }
-        .container:nth-child(5) { height:200px; }
-        .container:nth-child(6) { height:300px; }
-        .container:nth-child(7) { height:500px; }
-        .container:nth-child(8) { height:500px; }
-        .container:nth-child(9) { height:700px; }
-        .container:nth-child(10) { height:200px; }
-
-        #scroll {
-            position:fixed;
-            bottom:0;
-            text-align:center;
-            width:100%;
-            color:#555;
-            text-transform:uppercase;
-            font-size:150%;
-            font-weight:800;
-            box-sizing: border-box;
-            padding:25px 20px 5px 20px;
-            background: rgb(240,240,240);
-background: linear-gradient(0deg, rgba(240,240,240,1) 65%, rgba(240,240,240,0) 100%);
-        }
-
-        .logo a {
-            display:block;
-            width: 100%;
-            height: 100%;
-        }
-
-        @media only screen and (max-width: 600px) {
-            main {
-                column-count: 1;
-            }
-        }
-    </style>
-  </head>
+</head>
   <body>
     <div id="scroll">
         Scroll down
@@ -107,7 +22,7 @@ background: linear-gradient(0deg, rgba(240,240,240,1) 65%, rgba(240,240,240,0) 1
             Simple and fast event listener for enter viewport in pure Java-Script.
         </div>
         <main>
-            <div class="container" id="event-always-visible">It also works for items that are always visible...<br /><br /><code>ScrollEvent()<br/>.visible(...)</code><br /><br />Default options:<ul><li>fullyInView: false</li><li>delay: 0</li><li>repetition: 1</li></ul></div>
+            <div class="container" id="event-always-visible">It also works for items that are already visible...<br /><br /><code>ScrollEvent()<br/>.visible(...)</code><br /><br />Default options:<ul><li>fullyInView: false</li><li>delay: 0</li><li>repetition: 1</li></ul></div>
             <div class="container"></div>
             <div class="container"></div>
             <div class="container" id="event-fullyinview">This box have to be fully in view.<br /><br /><code>ScrollEvent({fullyInView: true})<br/>.visible(...)</code></div>
@@ -151,6 +66,13 @@ background: linear-gradient(0deg, rgba(240,240,240,1) 65%, rgba(240,240,240,0) 1
             element.style.background = '#8b21ee';
             element.style.color = '#fff';
         }
+
+        let scroll = document.getElementById('scroll');
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                scroll.innerHTML = '<a href="https://github.com/bitnulleins/scrollEvent.js#general-use" target="_blank">How to Install</a>';
+            }
+        });
     </script>
   </body>
 </html>

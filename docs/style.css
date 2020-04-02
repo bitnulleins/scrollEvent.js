@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+    background:#f0f0f0;
+    margin:10px;
+    font-family:'Open Sans';
+}
+
+#main {
+    max-width:800px;
+    margin: 0 auto;
+    padding:20px 10px;
+}
+
+.description {
+    font-size:150%;
+    color:#AAA;
+    text-align:center;
+    margin-top:20px;
+}
+
+.logo {
+    background-image:url(https://www.bit01.de/wp-content/uploads/2020/03/scrollEvent.png);
+    width:250px;
+    height:200px;
+    background-size:100% 100%;
+    margin:0 auto;
+}
+
+main {
+    margin-top:30px;
+    column-count: 2;
+    column-gap: 1em;
+}
+
+.container {
+    background-color: #b8b8b8;
+    display: inline-block;
+    margin: 0 0 1em;
+    border-radius:10px;
+    border:2px solid #fff;
+    font-size:150%;
+    width: 100%;
+    padding:20px;
+    box-sizing: border-box;
+    overflow:hidden;
+    transition: all 1s;
+}
+
+.container:nth-child(1) { height:800px; } /**/
+.container:nth-child(2) { height:500px; }
+.container:nth-child(3) { height:600px; }
+.container:nth-child(4) { height:600px; } /**/
+.container:nth-child(5) { height:200px; }
+.container:nth-child(6) { height:300px; }
+.container:nth-child(7) { height:500px; } /**/
+.container:nth-child(8) { height:500px; } /**/
+.container:nth-child(9) { height:700px; }
+.container:nth-child(10) { height:200px; } /**/
+
+#scroll {
+    transition: all 1s;
+    position:fixed;
+    bottom:0;
+    text-align:center;
+    width:100%;
+    color:#555;
+    text-transform:uppercase;
+    font-size:150%;
+    font-weight:800;
+    box-sizing: border-box;
+    padding:25px 20px 5px 20px;
+    background: rgb(240,240,240);
+background: linear-gradient(0deg, rgba(240,240,240,1) 65%, rgba(240,240,240,0) 100%);
+}
+
+.logo a {
+    display:block;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color:#8b21ee;
+    text-decoration:none;
+    display:block;
+    padding:5px;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        column-count: 1;
+    }
+
+    .container {
+        height:auto!important;
+        min-height:100px;
+    }
+}

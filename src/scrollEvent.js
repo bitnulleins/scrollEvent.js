@@ -30,10 +30,8 @@
             let visibleCounter = 0;
             let fullyInView = this.defaults.fullyInView || defaults.fullyInView;
             let delay = this.defaults.delay || defaults.delay;
-            let repetition = this.defaults.repetition || defaults.repetition;
-
-            console.log(element.getBoundingClientRect().top +"<="+ window.innerHeight)
-
+			let repetition = this.defaults.repetition || defaults.repetition;
+			
             if (element.getBoundingClientRect().top <= window.innerHeight) {
                 setTimeout(callback, delay, element);
             }
