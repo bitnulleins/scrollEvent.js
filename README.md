@@ -18,9 +18,9 @@ Key-features are:
 # General use
 1. First add the library to the header:
 ```html
-<script type="text/javascript" src="scrollEvent.min.js"></script>
+<script type="text/javascript" src="./local/path/to/scrollEvent.min.js"></script>
 ```
-With hosted file:
+With external hosted file:
 ```html
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollEvent.js/1.0.1/scrollEvent.min.js"></script>
 ```
