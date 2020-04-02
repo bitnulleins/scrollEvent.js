@@ -18,7 +18,11 @@ Key-features are:
 # General use
 1. First add the library to the header:
 ```html
-<script type="text/javascript" src="scrollEvent.js"></script>
+<script type="text/javascript" src="scrollEvent.min.js"></script>
+```
+With hosted file:
+```html
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/scrollEvent.js/1.0.1/scrollEvent.min.js"></script>
 ```
 2. Now add ScrollEvent listener to an element:
 
@@ -74,8 +78,8 @@ ScrollEvent({delay:2000,fullyInView:true}, () => { /* action .... */ });
 
 ## Install via npm
 
-You can simple add the javascript library via *npm install*
+You can simple install the javascript library locally via ![npm](https://www.npmjs.com/package/scrolleventjs):
 
 ```shell
-npm install scrollevent
+npm install scrolleventjs
 ```
