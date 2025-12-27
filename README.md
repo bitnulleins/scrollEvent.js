@@ -3,7 +3,8 @@
 </p>
   
 <p align="center">
-<img src="https://img.shields.io/github/size/bitnulleins/scrollEvent.js/src/scrollEvent.min.js?label=size%20%28minimize%29" /> <img src="https://img.shields.io/npm/v/scrolleventjs" /> <img src="https://img.shields.io/npm/dm/scrolleventjs" />  <img src="https://img.shields.io/github/issues/bitnulleins/scrollEvent.js" /> 
+<img src="https://img.shields.io/github/size/bitnulleins/scrollEvent.js/src/scrollEvent.min.js?label=size%20%28minimize%29" /> <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/bitnulleins/scrollevent.js">
+ <img src="https://img.shields.io/github/issues/bitnulleins/scrollEvent.js" /> 
 </p>
 
 # What is scrollEvent.js?
@@ -19,10 +20,6 @@ Key-features are:
 1. First [download](https://github.com/bitnulleins/scrollEvent.js/archive/master.zip) and add the library to the header:
 ```html
 <script src="./local/path/to/scrollEvent.min.js"></script>
-```
-With external hosted file:
-```html
-<script src="https://cdn.jsdelivr.net/npm/scrolleventjs"></script>
 ```
 2. Now add ScrollEvent listener to an element:
 
